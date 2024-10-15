@@ -1,9 +1,6 @@
-""" [M3.L4] Carrera de tortugas - Actividad # 4 "Dos Jugadores"
+""" [M3.L4] Carrera de tortugas - Actividad # 5 "Tercer Jugador"
 
-Objetivo: Crear las primeras DOS participantes de nuestra carrera de tortugas
-
-Paso 1: Agregamos variables globales
-Paso 2: Creamos nuestras tortugas y las colocamos en el punto de partida
+Objetivo: Agregamos una tercera tortuga a la carrera
 
 """
 import turtle
@@ -63,3 +60,14 @@ segunda.penup()
 #segunda.goto(-230, 40)
 segunda.goto(x_inicial_tortugas, (y_inicial_tortugas - (distancia_entre_tortugas * (cant_tortugas - 1))))
 segunda.speed(velocidad_corredores)
+
+# TERCERA
+cant_tortugas += 1
+tercera = turtle.Turtle() # AMARILLA
+tercera.color("gold")
+tercera.shape("turtle")
+tercera.speed(0)
+tercera.penup()
+#tercera.goto(-230, 40)
+tercera.goto(x_inicial_tortugas, (y_inicial_tortugas - (distancia_entre_tortugas * (cant_tortugas - 1))))
+tercera.speed(velocidad_corredores)

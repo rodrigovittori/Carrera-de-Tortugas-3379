@@ -1,15 +1,12 @@
-""" [M3.L4] Carrera de tortugas - Actividad # 6 "Moviendo a las dos"
+""" [M3.L4] Carrera de tortugas - Actividad # 8 "Aficionados"
 
-Objetivo: Configurar el avance de nuestras tortugas
-NOTA: Vamos a implementar el movimiento para las TRES (resolvemos el próximo ejercicio tmb)
+Objetivo: Dibujar espectadores para nuestro evento
+NOTA: El ejercicio 7 es resuelto por el código de la actividad #6
 
-Paso Nº 1: Crear variable que contenga la distancia que debe recorrer una tortuga para ganar
-Paso Nº 2: Agregar bucle donde pidamos predicción del resultado al jugador
-Paso Nº 3: Agregamos variables que registren el avance de cada tortuga
-Paso Nº 4: Agregamos el bucle de la carrera: while(not tenemos_ganadora)
--> incluír random
-Paso Nº 5: Agregamos una condición para mostrar el resultado de la carrera
-
+Paso Nº 1: Creamos una nueva tortuga para dibujar los espectadores
+Paso Nº 2: La ponemos en posición
+Paso Nº 3: Calculamos un número random de espectadores (por defecto entre 2 y 10)
+Paso Nº 4: Escribimos un bucle for que use dib_espectadores para simular varias tortugas
 
 """
 import turtle
@@ -100,6 +97,30 @@ t.penup()
 t.goto(x_inicial_tortugas + 100, 120)
 t.write("Apostaste por la tortuga #" + str(opcion_jugador))
 #t.write("Apostaste por la tortuga " + opcion_jugador)
+
+##############################
+
+# DIBUJAR ESPECTADORES
+
+dib_espect = turtle.Turtle()
+dib_espect.shape("turtle")
+dib_espect.color("purple")
+dib_espect.penup()
+dib_espect.speed(0)
+dib_espect.goto(-190, -120)
+dib_espect.seth(90)
+dib_espect.speed(velocidad_corredores)
+
+for i in range(1, random.randint(2,11)):
+    dib_espect.stamp()
+    dib_espect.seth(0)
+    dib_espect.fd(distancia_entre_tortugas/2 + 5)
+    dib_espect.seth(90)
+
+##############################
+
+# INICIAMOS CARRERA
+
 
 tenemos_ganadora = False # Vble de control que detendrá el bucle de la carrera cuando haya una ganadora
 tortuga_ganadora = 0     # Vable que contiene la id de nuestra ganadora

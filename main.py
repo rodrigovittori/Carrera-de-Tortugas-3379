@@ -1,12 +1,25 @@
-# [M3.L4] Carrera de tortugas - Actividad # 3 "Campo de carrera"
+""" [M3.L4] Carrera de tortugas - Actividad # 4 "Dos Jugadores"
 
-# NOTA: Ésta es la primera actividad del proyecto
+Objetivo: Crear las primeras DOS participantes de nuestra carrera de tortugas
 
+Paso 1: Agregamos variables globales
+Paso 2: Creamos nuestras tortugas y las colocamos en el punto de partida
+
+"""
 import turtle
+
+# VARIABLES GLOBALES
+velocidad_corredores = 5 # Controla la velocidad de la animación int: 0~10 (MAS BAJO, MAS RAPIDO) 
+cant_tortugas = 0 #contador con la cantidad de corredores
+distancia_entre_tortugas = 40
+y_inicial_tortugas = 80
+x_inicial_tortugas = -230
+
+# TORTUGA TABLERO
 
 t = turtle.Turtle() # Tortuga que dibuja el tablero (t)
 t.penup()
-t.goto(-100, 100)
+t.goto(-200, 100)
 t.pendown()
 t.speed(0)
 
@@ -24,3 +37,29 @@ for pista in range(1, (1 + cant_secciones_pista)):
     t.bk(long_secciones_pista)  # Retrocede y "vuelve" arriba
     t.seth(0)                   # Acomoda la tortuga para que quede mirando a la dcha
     t.fd(ancho_secciones_pista) # Avanza el ancho hasta la próxima sección
+
+###################################
+
+# CREAR CORREDORES:
+
+# PRIMERA
+cant_tortugas += 1
+primera = turtle.Turtle() # ROJO
+primera.color("crimson")
+primera.shape("turtle")
+primera.speed(0)
+primera.penup()
+#primera.goto(-230, 80)
+primera.goto(x_inicial_tortugas, (y_inicial_tortugas - (distancia_entre_tortugas * (cant_tortugas - 1))))
+primera.speed(velocidad_corredores)
+
+# SEGUNDA
+cant_tortugas += 1
+segunda = turtle.Turtle() # AZUL
+segunda.color("navy")
+segunda.shape("turtle")
+segunda.speed(0)
+segunda.penup()
+#segunda.goto(-230, 40)
+segunda.goto(x_inicial_tortugas, (y_inicial_tortugas - (distancia_entre_tortugas * (cant_tortugas - 1))))
+segunda.speed(velocidad_corredores)
